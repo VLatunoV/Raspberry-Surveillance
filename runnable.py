@@ -1,16 +1,16 @@
 class Runnable:
-    def __setup(self):
-        pass
+    def setup(self):
+        print("Base setup")
 
-    def __cleanup(self):
-        pass
+    def cleanup(self):
+        print("Base cleanup")
 
-    def __func(self, *args, **kw):
-        pass
+    def func(self, *args, **kw):
+        print("Base func")
 
     def run(self, *args, **kw):
-        self.__setup()
+        self.setup()
         try:
-            self.__func(args, kw)
+            self.func(args, kw)
         finally:
-            self.__cleanup()
+            self.cleanup()
